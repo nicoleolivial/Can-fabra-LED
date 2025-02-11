@@ -24,8 +24,8 @@ char keys[rowsCount][columsCount] = {
 const byte rowPins[rowsCount] = { 11, 10, 9, 8 };
 const byte columnPins[columsCount] = { 7, 6, 5, 4 };
 
-11/2/25
-Hoy se consiguió el objetivo del proyecto de la creación de la contraseña 
+#11/2/25
+
 Este es el código:
 #include <Keypad.h>
 
