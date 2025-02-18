@@ -94,4 +94,27 @@ void loop() {
    if (key) {
       Serial.println(key);
    }
+
+}
+LEDS 18/2/25
+#define NUM_LEDS 120
+#define DATA_PIN 3
+CRGB leds[NUM_LEDS];
+void setup() { 
+    FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS); 
+}
+void loop() { 
+  for ( int indiceLed = 0; indiceLed < NUM_LEDS; indiceLed ++){
+    leds[indiceLed] = CRGB::Red;
+    FastLED.show();
+    delay (250);
+
+  }  
+for ( int indiceLed = 0; indiceLed < NUM_LEDS; indiceLed ++){
+    leds[indiceLed] = CRGB::Black;
+
+
+  }    
+    FastLED.show();
+    delay (1250);
 }
