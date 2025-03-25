@@ -1,0 +1,27 @@
+#include <FastLED.h>
+#define NUM_LEDS 120
+#define DATA_PIN 9
+CRGB leds[NUM_LEDS];
+
+void setup() { 
+    FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);
+}
+
+void loop() {
+    for (int i = 0; i < NUM_LEDS; i++) {
+        switch (i % 6) {
+            case 0: leds[i] = CRGB::Red; break;
+            case 1: leds[i] = CRGB::Green; break;
+            case 2: leds[i] = CRGB::Blue; break;
+            case 3: leds[i] = CRGB::Yellow; break;
+            case 4: leds[i] = CRGB::Cyan; break;
+            case 5: leds[i] = CRGB::Magenta; break;
+        }
+        FastLED.show();
+        delay(300);
+    }
+    delay(500);
+    fill_solid(leds, NUM_LEDS, CRGB::Black); 
+    FastLED.show();
+    delay(500);
+}
